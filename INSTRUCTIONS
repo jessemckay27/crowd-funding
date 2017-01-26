@@ -1,0 +1,65 @@
+npm install -g angular-cli
+npm install -g typescript
+
+1) ng new crowd-funding
+2) bower init
+3) add bower to git ignore / dependencies section
+  /bower_components
+
+4) bower install bootstrap --save
+5) Angular-cli.json
+   "styles": [
+    "styles.css",
+    "../bower_components/bootstrap/dist/css/bootstrap.css"
+  ],
+
+  6) ng lint (runs the linter)
+
+
+  7) Add components
+      ng g component about
+
+      remove Onit unless needing dependency injection
+
+  8) Onit is used for dependency injection (if in 'admin' mode, display the 'admin' div / form, etc.)
+
+
+  9)  More Anglular CLI commands
+    ng g pipe pipe-name
+    ng g class class-name.model
+
+  10) create routing file in the app folder
+      app.routing.ts
+
+  11)  import routes into app.routing.ts
+      import { ModuleWithProviders }  from '@angular/core';
+      import { Routes, RouterModule } from '@angular/router';
+
+      const appRoutes: Routes = [ ];
+      export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+
+  12)  add route object into router folder, in our case "about"
+        import { AboutComponent } from './about/about.component';
+
+  13)  and path/component to array
+        {
+          path: 'about',    <----The location of the page   localhost:4200/about
+          component: AboutComponent    <----- The component name
+        }
+
+  14) add routes object to appRoutes array  in app/app.routing.ts
+
+      import { routing } from './app.routing';
+      export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+
+      update the imports array
+
+        imports: [
+         BrowserModule,
+         FormsModule,
+         HttpModule,
+         routing
+       ],
+
+  15) now we need to tell the component where to render in app.component.html
+      using <router-outlet></router-outlet>
