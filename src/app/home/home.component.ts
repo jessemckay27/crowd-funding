@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Project } from '../project.model';
 
 @Component({
   selector: 'app-home',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
 })
 
 export class HomeComponent {
-  title = '';
+  projects: Project[] = [
+    new Project("WorldTravel", 300, "travel all over the world", 1),
+    new Project("WorldTravel2222", 600, "2222travel all over the world", 2)
+  ];
 }

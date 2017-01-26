@@ -63,3 +63,6 @@ npm install -g typescript
 
   15) now we need to tell the component where to render in app.component.html
       using <router-outlet></router-outlet>
+
+  16)  How to add links
+      <a routerLink="path-from-a-route-in-appRoutes">Link Text</a>
