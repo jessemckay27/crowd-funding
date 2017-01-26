@@ -1,15 +1,27 @@
-import { Component } from '@angular/core';
 import { Project } from '../project.model';
+import { Router } from '@angular/router';
+import { ProjectService } from '../project.service';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [ProjectService]
 })
 
-export class HomeComponent {
-  projects: Project[] = [
-    new Project("WorldTravel", 300, "travel all over the world", 1),
-    new Project("WorldTravel2222", 600, "2222travel all over the world", 2)
-  ];
+export class HomeComponent implements OnInit {
+  projects: Project[];
+
+  constructor(private router: Router, private projectService: ProjectService) {}
+
+
+  ngOnInit(){
+    this.projects = this.projectService.getProjects();
+  }
+
+  projectDetails(clickedProject: Project) {
+    this.router.navigate(['projects', clickedProject.id]);
+  }
 }
