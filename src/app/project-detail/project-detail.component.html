@@ -1,9 +1,9 @@
 <div class="box-wrap">
   <div class="box-title-wrap">
-    <div class="box-title-title">{{projectToDisplay.title}}</div>
-    <div class="box-title-funds">$ {{projectToDisplay.fundsrequested}}</div>
+    <div class="box-title-title">{{(projectToDisplay | async)?.title}}</div>
+    <div class="box-title-funds">$ {{(projectToDisplay | async)?.fundsrequested}}</div>
   </div>
   <div class="box-body">
-    <div class="box-body-row">{{projectToDisplay.goal}}</div>
+    <div class="box-body-row">{{(projectToDisplay | async)?.goal}}</div>
   </div>
 </div>

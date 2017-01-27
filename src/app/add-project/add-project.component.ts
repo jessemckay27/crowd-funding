@@ -17,7 +17,6 @@ export class AddProjectComponent implements OnInit {
 
   submitForm(title: string, fundsrequested: number, goal: string) {
     var newProject: Project = new Project(title, fundsrequested, goal);
-    console.log(newProject);
+    this.projectService.addProject(newProject);
   }
-
 }

@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     this.projects = this.projectService.getProjects();
   }
 
-  projectDetails(clickedProject: Project) {
-    this.router.navigate(['projects', clickedProject.id]);
+  projectDetails(clickedProject) {
+    this.router.navigate(['projects', clickedProject.$key]);
   }
 }
