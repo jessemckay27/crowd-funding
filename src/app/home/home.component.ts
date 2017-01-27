@@ -2,6 +2,7 @@ import { Project } from '../project.model';
 import { Router } from '@angular/router';
 import { ProjectService } from '../project.service';
 import { Component, OnInit } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomeComponent implements OnInit {
-  projects: Project[];
+  projects: FirebaseListObservable<any[]>;
 
   constructor(private router: Router, private projectService: ProjectService) {}
 

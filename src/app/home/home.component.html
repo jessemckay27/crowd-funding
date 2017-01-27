@@ -1,9 +1,4 @@
-<!-- <div class="box-wrap">
-  <div class="box-title">Welcome to CrowdFunding!</div>
-  <div class="box-body"></div>
-</div> -->
-
-<div *ngFor="let project of projects" (click)="projectDetails(project)" class="box-wrap">
+<div *ngFor="let project of projects | async" (click)="projectDetails(project)" class="box-wrap">
   <div class="box-title-wrap">
     <div class="box-title-title">{{project.title}}</div>
     <div class="box-title-funds">$ {{project.fundsrequested}}</div>

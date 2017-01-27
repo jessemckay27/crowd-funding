@@ -1,0 +1,15 @@
+<div class="box-wrap">
+  <div class="">
+    <label>Project Title:</label>
+    <input #newTitle>
+  </div>
+  <div class="">
+    <label>Funds Requested:</label>
+    <input #newFundsRequested>
+  </div>
+  <div class="">
+    <label>Goal:</label>
+    <input #newGoal>
+  </div>
+  <button (click)="submitForm(newTitle.value, newFundsRequested.value, newDescription.value); newTitle.value=''; newFundsRequested.value=''; newGoal.value=''">Add</button>
+</div>
